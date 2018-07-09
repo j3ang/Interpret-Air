@@ -1,0 +1,361 @@
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+<div class="container">
+
+  <ul class="nav nav-tabs" style="margin-top: 18px;">
+    <li class="active" style="margin-right:20px; font-size:30px; "><a data-toggle="tab" href="#home">Account Information</a></li>
+    <li style="margin-right:20px; font-size:30px;"><a data-toggle="tab" href="#menu1">Transcripts</a></li>
+    <li style="margin-right:20px; font-size:30px;"><a data-toggle="tab" href="#menu2">Contacts</a></li>
+    <li style="margin-right:20px; font-size:30px;"><a data-toggle="tab" href="#menu3">Settings</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active" style="margin-top:20px; font-size:20px;">
+      <div *ngIf="user">
+        <h2 class="page-header">{{user.local.name}}</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><i class="far fa-edit" style="font-size:1.5em;"></i></li>
+          <li class="list-group-item">Username: {{user.local.username}}</li>
+          <li class="list-group-item">Email: {{user.local.email}}</li>
+        </ul>
+      </div>
+    </div>
+    <div id="menu1" class="tab-pane fade" style="margin-top:20px; font-size:20px;">
+      <h3>Transcripts</h3>
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <table class="table" style="width:100%;">
+            <th scope="col">John Doe</th>
+            <th scope="col">01/01/2018</th>
+          </table>
+        </button>
+      </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+              on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+              raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <table class="table" style="width:100%;">
+            <th scope="col">Nick Johnson</th>
+            <th scope="col">02/02/2018</th>
+          </table>
+        </button>
+      </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+              on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+              raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <table class="table" style="width:100%;">
+            <th scope="col">Marry Jane</th>
+            <th scope="col">03/03/2018</th>
+          </table>
+        </button>
+      </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+              on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+              raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapseThree">
+          <table class="table" style="width:100%;">
+            <th scope="col">July Dooley</th>
+            <th scope="col">03/03/2018</th>
+          </table>
+        </button>
+      </h5>
+          </div>
+          <div id="collapsefour" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+              on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+              raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#5" aria-expanded="false" aria-controls="collapseThree">
+          <table class="table" style="width:100%;">
+            <th scope="col">Paige Turner</th>
+            <th scope="col">03/03/2018</th>
+          </table>
+        </button>
+      </h5>
+          </div>
+          <div id="5" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+              on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+              raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#6" aria-expanded="false" aria-controls="collapseThree">
+          <table class="table" style="width:100%;">
+            <th scope="col">Mario Speedwagon</th>
+            <th scope="col">13/03/2018</th>
+          </table>
+        </button>
+      </h5>
+          </div>
+          <div id="6" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+              on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+              raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#7" aria-expanded="false" aria-controls="collapseThree">
+          <table class="table" style="width:100%;">
+            <th scope="col">Bob Fraples</th>
+            <th scope="col">07/03/2018</th>
+          </table>
+        </button>
+      </h5>
+          </div>
+          <div id="7" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+              on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+              raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <br />
+    <div id="menu2" class="tab-pane fade" style="margin-top:20px; font-size:20px;">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th width="2%"></th>
+            <th width="2%"></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th width="2%">Call</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><i class="far fa-edit" style="font-size:1.5em;"></i></td>
+            <td><i class="far fa-trash-alt" style="font-size:1.5em; color:red;"></i></td>
+            <td>John doe</td>
+            <td>john@example.com</td>
+            <td><i class="fa fa-phone" aria-hidden="true"></i></td>
+          </tr>
+          <tr>
+            <td><i class="far fa-edit" style="font-size:1.5em;"></i></td>
+            <td><i class="far fa-trash-alt" style="font-size:1.5em; color:red;"></i></td>
+            <td>Mary Moe</td>
+            <td>mary@example.com</td>
+            <td><i class="fa fa-phone" aria-hidden="true"></i></td>
+          </tr>
+          <tr>
+            <td><i class="far fa-edit" style="font-size:1.5em;"></i></td>
+            <td><i class="far fa-trash-alt" style="font-size:1.5em; color:red;"></i></td>
+            <td>July Dooley</td>
+            <td>july@example.com</td>
+            <td><i class="fa fa-phone" aria-hidden="true"></i></td>
+          </tr>
+          <tr>
+            <td><i class="far fa-edit" style="font-size:1.5em;"></i></td>
+            <td><i class="far fa-trash-alt" style="font-size:1.5em; color:red;"></i></td>
+            <td>Mario Speedwagon</td>
+            <td>mario@example.com</td>
+            <td><i class="fa fa-phone" aria-hidden="true"></i></td>
+          </tr>
+          <tr>
+            <td><i class="far fa-edit" style="font-size:1.5em;"></i></td>
+            <td><i class="far fa-trash-alt" style="font-size:1.5em; color:red;"></i></td>
+            <td>Paul Molive</td>
+            <td>paul@example.com</td>
+            <td><i class="fa fa-phone" aria-hidden="true"></i></td>
+          </tr>
+          <tr>
+            <td><i class="far fa-edit" style="font-size:1.5em;"></i></td>
+            <td><i class="far fa-trash-alt" style="font-size:1.5em; color:red;"></i></td>
+            <td>Paige Turner</td>
+            <td>paige@example.com</td>
+            <td><i class="fa fa-phone" aria-hidden="true"></i></td>
+          </tr>
+          <tr>
+            <td><i class="far fa-edit" style="font-size:1.5em;"></i></td>
+            <td><i class="far fa-trash-alt" style="font-size:1.5em; color:red;"></i></td>
+            <td>Jeremy Hajek</td>
+            <td>jeremy@example.com</td>
+            <td><i class="fa fa-phone" aria-hidden="true"></i></td>
+          </tr>
+          <tr>
+            <td><i class="far fa-edit" style="font-size:1.5em;"></i></td>
+            <td><i class="far fa-trash-alt" style="font-size:1.5em; color:red;"></i></td>
+            <td>Bob Frapples</td>
+            <td>bob@example.com</td>
+            <td><i class="fa fa-phone" aria-hidden="true"></i></td>
+          </tr>
+          <tr>
+            <td><i class="far fa-edit" style="font-size:1.5em;"></i></td>
+            <td><i class="far fa-trash-alt" style="font-size:1.5em; color:red;"></i></td>
+            <td>Anna Sthesia</td>
+            <td>anna@example.com</td>
+            <td><i class="fa fa-phone" aria-hidden="true"></i></td>
+          </tr>
+          <tr>
+            <td><i class="far fa-edit" style="font-size:1.5em;"></i></td>
+            <td><i class="far fa-trash-alt" style="font-size:1.5em; color:red;"></i></td>
+            <td>July Dooley</td>
+            <td>july@example.com</td>
+            <td><i class="fa fa-phone" aria-hidden="true"></i></td>
+          </tr>
+          <tr>
+            <td><i class="far fa-edit" style="font-size:1.5em;"></i></td>
+            <td><i class="far fa-trash-alt" style="font-size:1.5em; color:red;"></i></td>
+            <td>Petey Cruiser</td>
+            <td>petey@example.com</td>
+            <td><i class="fa fa-phone" aria-hidden="true"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="menu3" class="tab-pane fade" style="margin-top:20px; font-size:20px;">
+
+      <div>
+        <div class="form-inline">
+          <i class="fas fa-user-circle" style="color: orange; font-size:3em; margin-right:10px;"></i>
+          <input type="text" class="form-control" id="usr" placeholder="Share your status...">
+        </div>
+        <p>
+
+        </p>
+        <h3>
+          General
+        </h3>
+        <hr />
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck1">
+          <label class="custom-control-label" for="customCheck1">Show when you were last active</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck2">
+          <label class="custom-control-label" for="customCheck2">Show which device you're on (phone, tablet, or computer)</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck3">
+          <label class="custom-control-label" for="customCheck3">Show when you're in a video or phone call on your devices</label>
+        </div>
+        <p>
+
+        </p>
+        <h3>
+          Notifications
+        </h3>
+        <hr />
+        <div class="">
+          <select class="custom-select custom-select-m" style="background-color:white; color:black; outline:1px solid #d2d2d2; border-radius:5px;">
+        <option>Mute Notifications for...</option>
+        <option value="1 ">30 minutes</option>
+        <option value="3 ">1 hour</option>
+        <option value="3 ">2 hour</option>
+        <option value="1 ">4 hour</option>
+        <option value="1 ">6 hour</option>
+        <option value="2 ">8 hour</option>
+        <option value="3 ">12 hour</option>
+        <option value="1 ">1 day</option>
+        <option value="2 ">3 days</option>
+        <option value="2 ">6 days</option>
+      </select>
+          <p>
+
+          </p>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck4">
+          <label class="custom-control-label" for="customCheck4">Sound for incoming calls</label>
+        </div>
+        <hr />
+
+        <div id="accordion">
+
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          Blocked Users
+        </button>
+      </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th width="2%"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>John doe</td>
+                      <td>john@example.com</td>
+                      <td><button type="button" class="btn btn-secondary">Unblock</button></td>
+                    </tr>
+                    <tr>
+                      <td>Mary Moe</td>
+                      <td>mary@example.com</td>
+                      <td><button type="button" class="btn btn-secondary">Unblock</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:25px;">
+          <button type="button " class="btn btn-primary" onclick="saveFunction()">Save</button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

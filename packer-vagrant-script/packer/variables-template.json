@@ -1,0 +1,13 @@
+{
+   "database-name":"air-db",
+   "database-user-name":"",
+   "database-user-password":"",
+   "database-root-password":"",
+   "databaseip":"",
+   "databaseslaveip":"",
+   "webserverip":"",
+   "database-access-from-ip":"127.0.0.1",
+   "airdbmastervagrantboxname":"air-db-master",
+   "airwsvagrantboxname":"air-ws",
+   "airdbslavevagrantboxname":"air-db-slave"
+}

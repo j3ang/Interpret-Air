@@ -1,0 +1,226 @@
+@media screen and (max-width: 480px) {
+  /*
+  Secondary Collapsable Nav Bar -- 3/21/2018 DP
+  */
+  button#navButton.btn.btn-default {
+    margin-top: 10px;
+    padding: 0px;
+  }
+  nav.navbar.navbar-inverse {
+    max-height: 200px;
+    padding-left: 0px;
+  }
+  div.container-fluid {
+    padding-left: 0px;
+  }
+  ul.nav.navbar-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  body {
+    background: -moz-linear-gradient(to bottom, #FFFFFF, #0099ff);
+    background: linear-gradient(to bottom, #FFFFFF, #0099ff);
+  }
+  #app {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
+  #video {
+    background-color: #000000;
+  }
+  #canvas {
+    display: none;
+  }
+  li {
+    display: inline;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  #navButton {
+    float: right;
+  }
+  /*
+  This changes the LogOut Button ---- 3/21/2018 DP
+  */
+  ul.nav.navbar-nav.navbar-right {
+    color: red;
+  }
+  a#logOut {
+    color: red;
+  }
+  p {
+    margin: 10px;
+  }
+  /*
+  VideoControls *DP 3/22/2018
+  */
+  div.toggle.btn.btn-primary.slow {
+    margin: 10px;
+    outline: 2px solid grey;
+  }
+  #mobileControls {
+    border: 2px solid grey;
+    margin-top: 10px;
+    padding: 5px;
+  }
+}
+#main {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* Reset Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: white;
+  background-image: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: block;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: white;
+  overflow: hidden;
+  border-radius: .25em;
+}
+select {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 .5em;
+  color: black;
+  cursor: pointer;
+}
+select::-ms-expand {
+  display: none;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
+  background: white;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+.select::after {
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+.typewriter textarea {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid grey;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  animation: typing 8.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+.typewriterr textarea {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid grey;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+textarea {
+  resize: none;
+}
+.btn-space {
+  margin-right: 5px;
+}
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0
+  }
+  to {
+    width: 100%
+  }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /*
+Secondary Collapsable Nav Bar -- 3/21/2018 DP
+*/
+  button#navButton.btn.btn-default {
+    padding: 0px;
+  }
+  nav.navbar.navbar-inverse {
+    max-height: 200px;
+    padding-left: 0px;
+  }
+  div.container-fluid {
+    padding-left: 0px;
+  }
+  ul.nav.navbar-nav {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  li {
+    float: left;
+  }
+  li a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    border: 2px;
+  }
+  li a:hover {}
+  /*
+This changes the LogOut Button ---- 3/21/2018 DP
+*/
+  ul.nav.navbar-nav.navbar-right {
+    float: right;
+    color: red;
+  }
+  a#logOut {
+    color: red;
+  }
+  .langSelect {
+    height: 80px;
+    border-bottom: 2px solid black;
+  }
+  label {
+    font-size: 18px;
+  }
+}

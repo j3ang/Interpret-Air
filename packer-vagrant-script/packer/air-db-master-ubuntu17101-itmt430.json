@@ -1,0 +1,126 @@
+{
+  "builders": [{
+    "name": "Air-DB-Master",
+    "type": "virtualbox-iso",
+    "guest_os_type": "Ubuntu_64",
+    "guest_additions_mode": "disable",
+    "iso_url": "http://releases.ubuntu.com/17.10.1/ubuntu-17.10.1-server-amd64.iso",
+    "iso_checksum": "8ff73f1b622276758475c3bd5190b382774626de5a82c50930519381f6c3a3f8",
+    "iso_checksum_type": "sha256",
+    "http_directory": ".",
+    "http_port_min": 9001,
+    "http_port_max": 9001,
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "30m",
+    "communicator": "ssh",
+    "ssh_pty": "true",
+    "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
+    "post_shutdown_delay": "120s",
+    "vm_name": "Air-DB-Master",
+    "hard_drive_interface": "sata",
+    "disk_size": 20000,
+    "boot_wait": "5s",
+    "boot_command": [
+      "<enter><f6><esc>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs>",
+      "<bs><bs><bs>",
+      "/install/vmlinuz noapic ",
+      "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed/preseed.cfg ",
+      "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+      "hostname=Air-DB ",
+      "fb=false debconf/frontend=noninteractive ",
+      "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+      "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+      "initrd=/install/initrd.gz -- <enter>"
+    ],
+    "vboxmanage": [
+      [
+        "modifyvm",
+        "{{.Name}}",
+        "--memory",
+        "2048"
+      ]
+
+    ]
+  }],
+
+  "variables": {
+    "database-root-password": "",
+    "database-user-password": "",
+    "database-access-from-ip": "",
+    "databaseip": "",
+    "databaseslaveip": "",
+    "webserverip": "",
+    "database-name": "",
+    "database-user-name": "",
+    "airdbvagrantboxname":"",
+    "airwsvagrantboxname":"",
+    "airdbslavevagrantboxname":""
+  },
+
+  "provisioners": [{
+      "type": "file",
+      "source": "./id_rsa_github_deploy_key",
+      "destination": "/home/vagrant/"
+    },
+    {
+      "type": "file",
+      "source": "./config",
+      "destination": "/home/vagrant/"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
+      "inline": [
+        "mkdir -p /home/vagrant/.ssh",
+        "mkdir -p /root/.ssh",
+        "chmod 600 /home/vagrant/id_rsa_github_deploy_key",
+        "cp -v /home/vagrant/id_rsa_github_deploy_key /home/vagrant/.ssh/",
+        "cp -v /home/vagrant/config /home/vagrant/.ssh/",
+        "cp -v /home/vagrant/config /root/.ssh/",
+        "git clone git@github.com:illinoistech-itm/2018-itmt430-5.git"
+      ]
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
+      "script": "../scripts/post_install_itmt430-github-db-master.sh",
+      "environment_vars": [
+        "MONGO_ROOTPASS={{user `database-root-password`}}",
+        "MONGO_USERPASS={{user `database-user-password`}}",
+        "ACCESSFROMIP={{user `database-access-from-ip`}}",
+        "AIR_DB_IP={{user `databaseip`}}",
+        "AIR_DB_SLAVE_IP={{user `databaseslaveip`}}",
+        "AIR_WS_IP={{user `webserverip`}}",
+        "MONGO_DB={{user `database-name`}}",
+        "MONGO_USERNAME={{user `database-user-name`}}",
+        "VAGRANT_AIR_WS_NAME={{user `airwsvagrantboxname`}}",
+        "VAGRANT_AIR_DB_NAME={{user `airdbmastervagrantboxname`}}",
+        "VAGRANT_AIR_DB_SLAVE_NAME={{user `airdbslavevagrantboxname`}}"
+      ]
+    }
+  ],
+
+
+  "post-processors": [{
+    "type": "vagrant",
+    "keep_input_artifact": false,
+    "output": "../build/{{.BuildName}}-{{.Provider}}-{{timestamp}}.box"
+  }]
+}

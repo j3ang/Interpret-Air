@@ -1,0 +1,102 @@
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+<!--This is the secondary collapse Nav Bar *DP 3\21\2018-->
+<div id="main" class="border row " style="margin-top:40px;">
+  <div class="border col-md-6 position-relative overflow-hidden p-3 pt-5 p-mt-5 m-mt-3 text-center bg-light">
+    <h2>This is you</h2>
+    <p>
+      <br />
+    </p>
+    <div id="app ">
+      <div><video #video id="video " width="500 " height="375 " autoplay style="border:1px solid #d3d3d3; "></video></div>
+      <div class="row p-3 ">
+        <div class=".col-xs-4 mx-auto w-1 ">
+          <button type="button " class="btn btn-outline-success " id="snap " (click)="capture() "><i class="fas fa-phone "></i> Call</button>
+          <button type="button " class="btn btn-outline-danger " id="snap " (click)="remove() "><i class="fas fa-phone-slash "></i> Hang Up</button>
+          <button type="button " class="btn btn-outline-info "><i class="fas fa-microphone "></i> Mute </button>
+        </div>
+      </div>
+      <div class="row p-3 ">
+        <div class="select .col-xs-4 mx-auto w-1 ">
+          <select name="slct " id="slct ">
+      <option>Choose your language</option>
+      <option value="3 ">Chinese</option>
+      <option value="3 ">Czech</option>
+      <option value="1 ">Danish</option>
+      <option value="1 ">English</option>
+      <option value="2 ">French</option>
+      <option value="3 ">German</option>
+      <option value="1 ">Hungaria</option>
+      <option value="2 ">Irish</option>
+      <option value="2 ">Italian</option>
+      <option value="1 ">Japanese</option>
+      <option value="3 ">Korean</option>
+      <option value="2 ">Polish</option>
+      <option value="2 ">Punjabi</option>
+      <option value="2 ">Portugese</option>
+      <option value="3 ">Russian</option>
+      <option value="1 ">Spanish</option>
+      <option value="3 ">Swedish</option>
+      <option value="1 ">Vietnamese</option>
+    </select>
+        </div>
+      </div>
+      <div class="form-group typewriter ">
+        <label for="comment ">Translation:</label>
+        <textarea class="form-control " rows="8 " id="translation1 " onload="typewriter() ">Example of translated transcription of the user...
+        </textarea>
+      </div>
+    </div>
+  </div>
+  <div class="border col-md-6 position-relative overflow-hidden p-3 pt-5 p-mt-5 m-mt-3 text-center bg-light ">
+    <h2>The guy on the other side...</h2>
+    <p>
+      <br />
+    </p>
+    <div id="app " class="mt-8 ">
+      <canvas #canvas id="canvas " width="500 " height="375 " style="border:1px solid #d3d3d3; "></canvas>
+      <ul>
+        <li *ngFor="let c of captures ">
+          <img src="{{ c }} " height="10 " />
+        </li>
+      </ul>
+      <div class="row p-3 ">
+        <div class=".col-xs-4 mx-auto w-1 ">
+          <p>
+          </p>
+        </div>
+      </div>
+      <div class="row p-3 ">
+        <div class="select .col-xs-4 mx-auto w-1 ">
+          <select name="slct " id="slct ">
+      <option>Choose your language</option>
+      <option value="3 ">Chinese</option>
+      <option value="3 ">Czech</option>
+      <option value="1 ">Danish</option>
+      <option value="1 ">English</option>
+      <option value="2 ">French</option>
+      <option value="3 ">German</option>
+      <option value="1 ">Hungaria</option>
+      <option value="2 ">Irish</option>
+      <option value="2 ">Italian</option>
+      <option value="1 ">Japanese</option>
+      <option value="3 ">Korean</option>
+      <option value="2 ">Polish</option>
+      <option value="2 ">Punjabi</option>
+      <option value="2 ">Portugese</option>
+      <option value="3 ">Russian</option>
+      <option value="1 ">Spanish</option>
+      <option value="3 ">Swedish</option>
+      <option value="1 ">Vietnamese</option>
+    </select>
+        </div>
+      </div>
+      <div class="form-group typewriterr ">
+        <label for="comment ">Transcribing (Speech-to-Text):</label>
+        <textarea class="form-control " rows="8 " id="translation1 " onload="typewriter() ">This is an example of transcribing speech-to-text...
+        </textarea>
+      </div>
+    </div>
+  </div>
+</div>

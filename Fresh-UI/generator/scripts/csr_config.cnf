@@ -1,0 +1,10 @@
+[ req ]
+distinguished_name="InterpretAir"
+prompt="no"
+
+[ InterpretAir ]
+C="US"
+ST="Illinois"
+L="Chicago"
+O="InterpretAir"
+CN="interpretair.xyz"

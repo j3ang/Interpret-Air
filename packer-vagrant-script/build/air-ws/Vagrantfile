@@ -1,0 +1,78 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  # contolling multiple boxes -> https://www.vagrantup.com/docs/multi-machine/
+  ##############################################################################
+  #
+  #   Slave Database
+  #
+  ##############################################################################
+  config.vm.define "dbslave" do |dbslave|
+    @vagrantboxname = `jq --raw-output .airdbslavevagrantboxname ../../packer/variables.json`
+    dbslave.vm.box = %(#{@vagrantboxname.chop})
+    dbslave.vm.hostname = "Air-DB-Slave"
+    if Vagrant.has_plugin? "vagrant-vbguest"
+      dbslave.vbguest.no_install  = true
+      dbslave.vbguest.auto_update = false
+      dbslave.vbguest.no_remote   = true
+    end
+    dbslave.vm.synced_folder '.', '/vagrant', disabled: true
+
+    # Create a private network, which allows host-only access to the machine
+    # using a specific IP.
+    @dbslaveip = `jq --raw-output .databaseslaveip ../../packer/variables.json`
+    dbslave.vm.network "private_network", ip: %(#{@dbslaveip.chop})
+    puts "Slave Database IP: #{@dbslaveip.chop} "
+    dbslave.vm.provision "shell", path: "db-slave-provision.sh"
+  end
+
+  ##############################################################################
+  #
+  #   Master Database
+  #
+  ##############################################################################
+  config.vm.define "dbmaster" do |dbmaster|
+    @vagrantboxname = `jq --raw-output .airdbmastervagrantboxname ../../packer/variables.json`
+    dbmaster.vm.box = %(#{@vagrantboxname.chop})
+    dbmaster.vm.hostname = "Air-DB-Master"
+    if Vagrant.has_plugin? "vagrant-vbguest"
+      dbmaster.vbguest.no_install  = true
+      dbmaster.vbguest.auto_update = false
+      dbmaster.vbguest.no_remote   = true
+    end
+    dbmaster.vm.synced_folder '.', '/vagrant', disabled: true
+
+    # Create a private network, which allows host-only access to the machine
+    # using a specific IP.
+    @ip = `jq --raw-output .databaseip ../../packer/variables.json`
+    dbmaster.vm.network "private_network", ip: %(#{@ip.chop})
+    puts "Master Database IP: #{@ip.chop} "
+    dbmaster.vm.provision "shell", path: "db-master-provision.sh"
+  end
+
+##############################################################################
+#
+#   Webserver
+#
+##############################################################################
+  config.vm.define "web" do |web|
+    @vagrantboxname = `jq --raw-output .airwsvagrantboxname ../../packer/variables.json`
+    web.vm.box = %(#{@vagrantboxname.chop})
+    web.vm.hostname = "Air-WS"
+    if Vagrant.has_plugin? "vagrant-vbguest"
+      web.vbguest.no_install  = true
+      web.vbguest.auto_update = false
+      web.vbguest.no_remote   = true
+    end
+    web.vm.synced_folder '.', '/vagrant', disabled: true
+
+    # Create a private network, which allows host-only access to the machine
+    # using a specific IP.
+    @webip = `jq --raw-output .webserverip ../../packer/variables.json`
+    web.vm.network "private_network", ip: %(#{@webip.chop})
+
+    # Enable provisioning with a shell script.
+    web.vm.provision "shell", path: "webserver-provision.sh"
+  end
+end
