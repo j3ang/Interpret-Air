@@ -8,6 +8,11 @@ vagrant -v
 ```
 ### 2. [Packer](https://www.packer.io/intro/getting-started/install.html "Packer's website")
 Visit website link above to install and check version:
+Mac user can use ###[homebrew](https://brew.sh/) to install packer
+```sh
+brew install packer
+```
+
 ``` sh
 $ packer -v
 ```
