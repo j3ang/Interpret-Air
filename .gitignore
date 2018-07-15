@@ -1,3 +1,4 @@
 id_rsa_github_deploy_key
 packer-vagrant-script/packer/packer_cache/
 variables.json
+.DS_Store
