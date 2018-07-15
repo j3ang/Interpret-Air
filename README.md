@@ -62,26 +62,25 @@ Your *variables.json* file should look like the following:
 *  Assign IP of webserver, master and slave databaseip
 
 - Overall deploy time: ~ 50 minutes (over an hour in case of timeout or [VBox Manager error](https://github.com/illinoistech-itm/2018-itmt430-5/blob/master/diagrams/Builde%20Error/VBox%20Manager%20error.PNG))
-- Overall deploy time: ~ 50 minutes (over an hour in case of timeout or [VBox Manager error](https://github.com/illinoistech-itm/Interpret-Air/blob/master/diagrams/Builde%20Error/VBox%20Manager%20error.PNG))
 
 ### 2. Build slave/master database and webserver in packer folder
 1. Build the slave database and add to vagrant box
 ```sh
-$ packer build --var-file=./variables.json air-db-slave-ubuntu17101-itmt430.json
+$ packer build --var-file=./variables.json air-db-slave-ubuntu17101.json
 ...
 $ vagrant box add ../build/Air-DB-Slave-virtualbox-[replace with your timestamp].box --name air-db-slave
 ```
 
 2. Build the master database and add master database to vagrant box
 ```sh
-$ packer build --var-file=./variables.json air-db-master-ubuntu17101-itmt430.json
+$ packer build --var-file=./variables.json air-db-master-ubuntu17101.json
 ...
 $ vagrant box add ../build/Air-DB-Master-virtualbox-[replace with your timestamp].box --name air-db-master
 ```
 
 3. Build the webserver and add webserver to vagrant box
 ```sh
-$ packer build --var-file=./variables.json air-ws-ubuntu17101-itmt430.json
+$ packer build --var-file=./variables.json air-ws-ubuntu17101.json
 ...
 $ vagrant box add ../build/Air-WS-virtualbox-[replace with your timestamp].box --name air-ws
 ```
