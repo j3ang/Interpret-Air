@@ -77,7 +77,7 @@ sudo apt-get update
 
   # MongoDB Create Users
   # ---------------------------------------------------
-  cd /home/vagrant/2018-itmt430-5/Fresh-UI/generator/config
+  cd /home/vagrant/Interpret-Air/Fresh-UI/generator/config
   sudo git pull
   ls
   sudo mongo admin --eval "var ROOTPASS = '$MONGO_ROOTPASS'" mongoRoot.js
@@ -135,7 +135,7 @@ sudo apt-get update
   echo "Set up firewall rules"
   ufw --force enable
   #allow ssh
-  ufw allow proto tcp to 0.0.0.0/0 port 22 
+  ufw allow proto tcp to 0.0.0.0/0 port 22
   #allow webserver
   ufw allow proto tcp to 0.0.0.0/0 port 80
   #allow https

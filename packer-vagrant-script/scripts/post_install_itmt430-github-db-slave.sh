@@ -68,7 +68,7 @@ sudo apt-get update
   # ------------------------------------------------------------------------------
   # MongoDB Create Users
   # ---------------------------------------------------
-  cd /home/vagrant/2018-itmt430-5/Fresh-UI/generator/config
+  cd /home/vagrant/Interpret-Air/Fresh-UI/generator/config
   sudo git pull
   ls
   #
