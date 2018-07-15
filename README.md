@@ -27,7 +27,7 @@ Change directory to the packer folder
 ```sh
 $ cd Interpret-Air/packer-vagrant-script/packer
 ```
-Assuming you have generated ssh key in ~/.ssh with default name **id_rsa**, and registered github deploy key with your public ssh key, copy your private ssh key to packer folder and rename it **id_rsa_github_deploy_key**
+Assuming you have generated ssh key with ssh-keygen(https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html) command in ~/.ssh with default name **id_rsa**, and registered github deploy key with your public ssh key, copy your private ssh key to packer folder and rename it **id_rsa_github_deploy_key**
 
  ```sh
 $ cp ~/.ssh/id_rsa . && mv id_rsa id_rsa_github_deploy_key
