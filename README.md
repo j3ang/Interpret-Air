@@ -1,4 +1,4 @@
-# InterpretAir - 2018 ITMT 430-5
+# InterpretAir - 2018 ITM 430 - Capstone
 
 ## Install build tools:
 ### 1. [Vagrant](https://www.vagrantup.com/)
@@ -21,11 +21,11 @@ $ jq
 ### 1. Clone and Configure
 Clone this repository (copy/paste and run the command line below)
 ```sh
-$ git clone https://github.com/illinoistech-itm/2018-itmt430-5.git && cd 2018-itmt430-5/packer-vagrant-script/packer
+$ git clone https://github.com/jwang206/Interpret-Air.git && cd Interpret-Air/packer-vagrant-script/packer
 ```
 Change directory to the packer folder
 ```sh
-$ cd 2018-itmt430-5/packer-vagrant-script/packer
+$ cd Interpret-Air/packer-vagrant-script/packer
 ```
 Assuming you have generated ssh key in ~/.ssh with default name **id_rsa**, and registered github deploy key with your public ssh key, copy your private ssh key to packer folder and rename it **id_rsa_github_deploy_key**
 
@@ -62,6 +62,7 @@ Your *variables.json* file should look like the following:
 *  Assign IP of webserver, master and slave databaseip
 
 - Overall deploy time: ~ 50 minutes (over an hour in case of timeout or [VBox Manager error](https://github.com/illinoistech-itm/2018-itmt430-5/blob/master/diagrams/Builde%20Error/VBox%20Manager%20error.PNG))
+- Overall deploy time: ~ 50 minutes (over an hour in case of timeout or [VBox Manager error](https://github.com/illinoistech-itm/Interpret-Air/blob/master/diagrams/Builde%20Error/VBox%20Manager%20error.PNG))
 
 ### 2. Build slave/master database and webserver in packer folder
 1. Build the slave database and add to vagrant box
