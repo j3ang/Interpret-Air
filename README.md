@@ -1,31 +1,59 @@
 # InterpretAir - 2018 ITM 430 - Capstone
 
-## Install build tools:
-### 1. [Vagrant](https://www.vagrantup.com/)
-Visit website link above to install and check version:
+## 0. Install environment build tools:
+###### Windows user can use [chocolatey](https://chocolatey.org/docs/installation) to install the tools below
+#### Chocolatey
+Install with cmd.exe:
 ```sh
-vagrant -v
+$ @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 ```
-### 2. [Packer](https://www.packer.io/intro/getting-started/install.html "Packer's website")
-- Visit website link above to install and check version:
-- Mac user can use [homebrew](https://brew.sh/) to install packer
+###### Mac user can use [homebrew](https://brew.sh/).
+#### Homebrew
+```sh
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+#### 1. [Vagrant](https://www.vagrantup.com/downloads.html)
+Visit website link above to install and check version:
+###### Windows:
+```sh
+$ chocolatey install vagrant
+$ vagrant -v
+```
+###### Mac:
+```sh
+$ brew install vagrant
+$ vagrant -v
+```
+
+#### 2. [Packer](https://www.packer.io/intro/getting-started/install.html "Packer's website")
+Visit website link above to install and check version:
+###### Windows:
+```sh
+$ chocolatey install packer
+$ packer -v
+```
+###### Mac:
 ```sh
 $ brew install packer
 $ packer -v
 ```
-### 3. [jq](https://stedolan.github.io/jq/download/)
+
+#### 3. [jq](https://stedolan.github.io/jq/download/)
 Visit website link above to install and check version
 This will extract json variables specified in *variables.json* in step 3
-Windows:
+###### Windows:
 ```sh
 $ chocolatey install jq
 $ jq
 ```
-Mac:
+###### Mac:
 ```sh
 $ brew install jq
 $ jq
 ```
+
+*****
 
 ### 1. Clone and Configure
 Clone this repository (copy/paste and run the command line below)
@@ -36,11 +64,11 @@ Change directory to the packer folder
 ```sh
 $ cd Interpret-Air/packer-vagrant-script/packer
 ```
-Assuming you have generated ssh key with [ssh-keygen](https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html) command in ~/.ssh with default name **id_rsa**, and registered github deploy key with your public ssh key, copy your private ssh key to packer folder and rename it **id_rsa_github_deploy_key**
-
+Assuming you have generated ssh key with [ssh-keygen](https://confluence.atlassian.com/bitbucketserver/creating-ssh-keys-776639788.html) command in ~/.ssh with default name **id_rsa**, and registered github deploy key with your public ssh key, copy your private ssh key to packer folder and rename it **id_rsa_github_deploy_key**  
  ```sh
 $ cp ~/.ssh/id_rsa . && mv id_rsa id_rsa_github_deploy_key
 ```
+****Note: Make sure sensitive files are ignored in .gitignore file.***
 
 Create variables.json file using the template provided (**variables-template.json**)
 ```sh
