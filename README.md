@@ -10,10 +10,7 @@ vagrant -v
 - Visit website link above to install and check version:
 - Mac user can use [homebrew](https://brew.sh/) to install packer
 ```sh
-brew install packer
-```
-
-``` sh
+$ brew install packer
 $ packer -v
 ```
 ### 3. [jq](https://stedolan.github.io/jq/download/)
