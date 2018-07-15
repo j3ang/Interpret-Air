@@ -16,10 +16,17 @@ $ packer -v
 ### 3. [jq](https://stedolan.github.io/jq/download/)
 Visit website link above to install and check version
 This will extract json variables specified in *variables.json* in step 3
+Windows:
 ```sh
 $ chocolatey install jq
 $ jq
 ```
+Mac:
+```sh
+$ brew install jq
+$ jq
+```
+
 ### 1. Clone and Configure
 Clone this repository (copy/paste and run the command line below)
 ```sh
